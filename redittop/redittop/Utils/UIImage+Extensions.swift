@@ -18,6 +18,7 @@ extension UIImage {
     static func loadCachedImage(with urlString: String, completionHandler: @escaping imageDownloaded) {
         if let cachedImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             completionHandler(cachedImage)
+            return
         }
         
         let session = URLSession.shared
@@ -26,7 +27,7 @@ extension UIImage {
         
         let task = session.dataTask(with: url!, completionHandler: { (data, response, error) -> Void in
             
-            guard (error != nil) else {
+            guard (error == nil) else {
                 completionHandler(nil)
                 return
             }
@@ -36,6 +37,8 @@ extension UIImage {
                     imageCache.setObject(image, forKey: urlString as AnyObject)
                     completionHandler(image)
                 })
+            } else {
+                completionHandler(nil)
             }
             
         })

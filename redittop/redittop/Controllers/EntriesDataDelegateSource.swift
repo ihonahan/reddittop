@@ -11,7 +11,8 @@ import UIKit
 let entryCellIdentifier = "EntryCell"
 
 protocol EntriesDataDelegate {
-    func entriesDataDelegateRequestShowImage(sender: EntriesDataDelegateSource, imageUrl: URL)
+    func entriesDataDelegateRequestShowImage(sender: EntriesDataDelegateSource, imageUrl: String)
+    func entriesDataDelegateFinishDataLoad(sender: EntriesDataDelegateSource)
 }
 
 class EntriesDataDelegateSource: NSObject, UITableViewDelegate, UITableViewDataSource, EntryTableViewCellDelegate {
@@ -27,6 +28,10 @@ class EntriesDataDelegateSource: NSObject, UITableViewDelegate, UITableViewDataS
         dispatch.async {
             self.entries.append(contentsOf: resultEntries)
             self.table.reloadData()
+            
+            if let del = self.delegate {
+                del.entriesDataDelegateFinishDataLoad(sender: self)
+            }
         }
     }
     
@@ -34,13 +39,13 @@ class EntriesDataDelegateSource: NSObject, UITableViewDelegate, UITableViewDataS
         return 1
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let cell = tableView.cellForRow(at: indexPath) as! EntryTableViewCell
-        
-        let height = cell.commentsLabel.frame.origin.y + cell.commentsLabel.frame.size.height + 2.0
-        
-        return height
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let cell = tableView.cellForRow(at: indexPath) as! EntryTableViewCell
+//        
+//        let height = cell.commentsLabel.frame.origin.y + cell.commentsLabel.frame.size.height + 2.0
+//        
+//        return height
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.entries.count
@@ -55,6 +60,9 @@ class EntriesDataDelegateSource: NSObject, UITableViewDelegate, UITableViewDataS
         cell.authorLabel.text = entry.author
         cell.commentsLabel.text = "\(entry.numberOfComments) comments"
         cell.upVotesLabel.text = "\(entry.upVotes)"
+        cell.dateLabel.text = Util.dateFormatted(date: entry.date)
+        cell.delegate = self
+        cell.entry = entry
         UIImage.loadCachedImage(with: entry.thumb) { (image) in
             cell.thumbImageView.image = image
         }
@@ -66,9 +74,7 @@ class EntriesDataDelegateSource: NSObject, UITableViewDelegate, UITableViewDataS
     //MARK: - EntryTableViewCellDelegate methods
     func entryTableViewCellDidTappedThumb(sender: EntryTableViewCell, entry: Entry) {
         if let del = self.delegate {
-            if let url = entry.urlImage {
-                del.entriesDataDelegateRequestShowImage(sender: self, imageUrl: url)
-            }
+            del.entriesDataDelegateRequestShowImage(sender: self, imageUrl: entry.urlImage)
         }
     }
     

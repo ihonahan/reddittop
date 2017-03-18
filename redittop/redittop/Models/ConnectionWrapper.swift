@@ -28,7 +28,7 @@ class ConnectionWrapper: NSObject {
         let url = URL(string: composedUrl)
         
         let task = session.dataTask(with: url!) { (data, response, error) in
-            guard (error != nil) else {
+            guard (error == nil) else {
                 completionHandler(false, [])
                 return
             }

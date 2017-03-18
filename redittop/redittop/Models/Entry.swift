@@ -16,7 +16,7 @@ class Entry {
     var thumb : String = ""
     var numberOfComments : Int = 0
     var upVotes : Int = 0
-    var urlImage : URL?
+    var urlImage : String = ""
     
     static func jsonToEntries(json: [String: AnyObject]) -> [Entry] {
         var result = [Entry]()
@@ -36,7 +36,7 @@ class Entry {
                             entry.author = authorString
                         }
                         if let thumbString = childData["thumbnail"] as? String {
-                            entry.title = thumbString
+                            entry.thumb = thumbString
                         }
                         if let commentsNumber = childData["num_comments"] as? Int {
                             entry.numberOfComments = commentsNumber
@@ -45,7 +45,7 @@ class Entry {
                             entry.upVotes = votesNumber
                         }
                         if let urlString = childData["url"] as? String {
-                            entry.urlImage = URL(string: urlString)
+                            entry.urlImage = urlString
                         }
                         if let dateNumber = childData["created"] as? TimeInterval {
                             entry.date = Date(timeIntervalSince1970: dateNumber)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301BB6421E7CE83100BA50E5 /* FullImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301BB6411E7CE83100BA50E5 /* FullImageViewController.swift */; };
 		303B63C21E7B7E6800466F9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B63C11E7B7E6800466F9E /* AppDelegate.swift */; };
 		303B63C71E7B7E6800466F9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 303B63C51E7B7E6800466F9E /* Main.storyboard */; };
 		303B63C91E7B7E6800466F9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 303B63C81E7B7E6800466F9E /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		301BB6411E7CE83100BA50E5 /* FullImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullImageViewController.swift; sourceTree = "<group>"; };
 		303B63BE1E7B7E6700466F9E /* redittop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = redittop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		303B63C11E7B7E6800466F9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		303B63C61E7B7E6800466F9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				303B63D51E7B913400466F9E /* TopListViewController.swift */,
 				303B63D91E7B91EC00466F9E /* EntriesDataDelegateSource.swift */,
 				303B63DB1E7B925100466F9E /* EntryTableViewCell.swift */,
+				301BB6411E7CE83100BA50E5 /* FullImageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				303B63D81E7B914900466F9E /* Entry.swift in Sources */,
 				303B63DC1E7B925100466F9E /* EntryTableViewCell.swift in Sources */,
+				301BB6421E7CE83100BA50E5 /* FullImageViewController.swift in Sources */,
 				303B63D61E7B913400466F9E /* TopListViewController.swift in Sources */,
 				303B65151E7CC8BC00466F9E /* Util.swift in Sources */,
 				303B65131E7CC5CF00466F9E /* UIImage+Extensions.swift in Sources */,
@@ -347,6 +351,7 @@
 				303B63D21E7B7E6800466F9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
