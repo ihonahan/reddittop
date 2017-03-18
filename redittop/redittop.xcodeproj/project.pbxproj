@@ -15,6 +15,9 @@
 		303B63D81E7B914900466F9E /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B63D71E7B914900466F9E /* Entry.swift */; };
 		303B63DA1E7B91EC00466F9E /* EntriesDataDelegateSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B63D91E7B91EC00466F9E /* EntriesDataDelegateSource.swift */; };
 		303B63DC1E7B925100466F9E /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B63DB1E7B925100466F9E /* EntryTableViewCell.swift */; };
+		303B65091E7C656B00466F9E /* ConnectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B65081E7C656B00466F9E /* ConnectionWrapper.swift */; };
+		303B65131E7CC5CF00466F9E /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B65121E7CC5CF00466F9E /* UIImage+Extensions.swift */; };
+		303B65151E7CC8BC00466F9E /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303B65141E7CC8BC00466F9E /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		303B63D71E7B914900466F9E /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		303B63D91E7B91EC00466F9E /* EntriesDataDelegateSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesDataDelegateSource.swift; sourceTree = "<group>"; };
 		303B63DB1E7B925100466F9E /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		303B65081E7C656B00466F9E /* ConnectionWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionWrapper.swift; sourceTree = "<group>"; };
+		303B65121E7CC5CF00466F9E /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		303B65141E7CC8BC00466F9E /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		303B63C01E7B7E6800466F9E /* redittop */ = {
 			isa = PBXGroup;
 			children = (
+				303B65111E7CC59D00466F9E /* Utils */,
 				303B63D31E7B90FE00466F9E /* Controllers */,
 				303B63D41E7B90FE00466F9E /* Models */,
 				303B63C11E7B7E6800466F9E /* AppDelegate.swift */,
@@ -85,8 +92,18 @@
 			isa = PBXGroup;
 			children = (
 				303B63D71E7B914900466F9E /* Entry.swift */,
+				303B65081E7C656B00466F9E /* ConnectionWrapper.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		303B65111E7CC59D00466F9E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				303B65121E7CC5CF00466F9E /* UIImage+Extensions.swift */,
+				303B65141E7CC8BC00466F9E /* Util.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +181,11 @@
 				303B63D81E7B914900466F9E /* Entry.swift in Sources */,
 				303B63DC1E7B925100466F9E /* EntryTableViewCell.swift in Sources */,
 				303B63D61E7B913400466F9E /* TopListViewController.swift in Sources */,
+				303B65151E7CC8BC00466F9E /* Util.swift in Sources */,
+				303B65131E7CC5CF00466F9E /* UIImage+Extensions.swift in Sources */,
 				303B63DA1E7B91EC00466F9E /* EntriesDataDelegateSource.swift in Sources */,
 				303B63C21E7B7E6800466F9E /* AppDelegate.swift in Sources */,
+				303B65091E7C656B00466F9E /* ConnectionWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,7 +31,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="106" id="jRM-o8-TJk" customClass="EntryTableViewCell" customModule="redittop" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="106" id="jRM-o8-TJk" customClass="EntryTableViewCell" customModule="redittop" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="106"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jRM-o8-TJk" id="FQp-KR-67z">
@@ -95,10 +95,18 @@
                                                                     <color key="textColor" red="0.1960784314" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT3-5E-S2U">
+                                                                    <rect key="frame" x="65" y="13" width="80" height="80"/>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <connections>
+                                                                        <action selector="tapUpThumbWithSender:" destination="jRM-o8-TJk" eventType="touchUpInside" id="4Rq-1V-gD4"/>
+                                                                    </connections>
+                                                                </button>
                                                             </subviews>
                                                             <color key="backgroundColor" white="1" alpha="0.80252659574468088" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstItem="FvM-eT-hgo" firstAttribute="top" secondItem="0o7-0X-VD7" secondAttribute="top" constant="8" id="04v-hq-hNe"/>
+                                                                <constraint firstItem="XT3-5E-S2U" firstAttribute="centerY" secondItem="XhH-H9-LNq" secondAttribute="centerY" id="2n7-3I-Wej"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Bre-p8-52g" secondAttribute="trailing" constant="8" id="GRg-GA-syI"/>
                                                                 <constraint firstItem="UWe-MI-gxG" firstAttribute="leading" secondItem="0o7-0X-VD7" secondAttribute="leading" constant="4" id="IGF-hZ-zfR"/>
                                                                 <constraint firstItem="Pmw-JX-jyu" firstAttribute="top" secondItem="Bre-p8-52g" secondAttribute="bottom" constant="3" id="JZR-je-PPo"/>
@@ -106,16 +114,19 @@
                                                                 <constraint firstItem="XhH-H9-LNq" firstAttribute="centerY" secondItem="0o7-0X-VD7" secondAttribute="centerY" id="UB1-Rd-2dj"/>
                                                                 <constraint firstItem="UWe-MI-gxG" firstAttribute="centerY" secondItem="0o7-0X-VD7" secondAttribute="centerY" id="dTr-gd-p1t"/>
                                                                 <constraint firstAttribute="trailing" secondItem="BD0-GU-01G" secondAttribute="trailing" constant="8" id="fCS-hi-o6W"/>
+                                                                <constraint firstItem="XT3-5E-S2U" firstAttribute="centerX" secondItem="XhH-H9-LNq" secondAttribute="centerX" id="gc9-Un-QiT"/>
                                                                 <constraint firstItem="tva-X3-cLd" firstAttribute="leading" secondItem="0o7-0X-VD7" secondAttribute="leading" constant="10" id="gnm-5B-ajh"/>
                                                                 <constraint firstItem="Pmw-JX-jyu" firstAttribute="leading" secondItem="XhH-H9-LNq" secondAttribute="trailing" constant="8" id="itD-oe-1SK"/>
                                                                 <constraint firstItem="XhH-H9-LNq" firstAttribute="leading" secondItem="tva-X3-cLd" secondAttribute="trailing" constant="12" id="kPp-WK-IeX"/>
                                                                 <constraint firstItem="BD0-GU-01G" firstAttribute="top" secondItem="FvM-eT-hgo" secondAttribute="bottom" constant="6" id="lyd-o3-Yu1"/>
+                                                                <constraint firstItem="XT3-5E-S2U" firstAttribute="width" secondItem="XhH-H9-LNq" secondAttribute="width" id="pX9-lu-96r"/>
                                                                 <constraint firstItem="BD0-GU-01G" firstAttribute="leading" secondItem="XhH-H9-LNq" secondAttribute="trailing" constant="8" id="q48-tQ-gTh"/>
                                                                 <constraint firstItem="Bre-p8-52g" firstAttribute="top" secondItem="BD0-GU-01G" secondAttribute="bottom" constant="4" id="rad-1o-dDH"/>
                                                                 <constraint firstItem="Bre-p8-52g" firstAttribute="leading" secondItem="XhH-H9-LNq" secondAttribute="trailing" constant="8" id="tCq-Ju-eXh"/>
                                                                 <constraint firstItem="tva-X3-cLd" firstAttribute="centerY" secondItem="0o7-0X-VD7" secondAttribute="centerY" id="uMk-RL-Waj"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Pmw-JX-jyu" secondAttribute="bottom" constant="2" id="vbN-VK-1yu"/>
                                                                 <constraint firstAttribute="trailing" secondItem="FvM-eT-hgo" secondAttribute="trailing" constant="8" id="yLj-Lv-M7W"/>
+                                                                <constraint firstItem="XT3-5E-S2U" firstAttribute="height" secondItem="XhH-H9-LNq" secondAttribute="height" id="zG2-Tq-PF5"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -128,6 +139,17 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="arrowsImageView" destination="tva-X3-cLd" id="tfk-kf-Iag"/>
+                                                    <outlet property="authorLabel" destination="BD0-GU-01G" id="dcQ-vI-Wm1"/>
+                                                    <outlet property="commentsLabel" destination="Pmw-JX-jyu" id="F21-HO-bgk"/>
+                                                    <outlet property="dateLabel" destination="Bre-p8-52g" id="cEl-UK-be8"/>
+                                                    <outlet property="fullContainer" destination="0o7-0X-VD7" id="zJJ-B4-cTn"/>
+                                                    <outlet property="thumbButton" destination="XT3-5E-S2U" id="Sch-DB-8gf"/>
+                                                    <outlet property="thumbImageView" destination="XhH-H9-LNq" id="buq-uE-eVr"/>
+                                                    <outlet property="titleLabel" destination="FvM-eT-hgo" id="MA6-FG-Otx"/>
+                                                    <outlet property="upVotesLabel" destination="UWe-MI-gxG" id="Loo-SL-oEf"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

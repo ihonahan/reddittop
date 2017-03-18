@@ -15,11 +15,20 @@ class TopListViewController: UIViewController {
     
     @IBOutlet weak var delegateDatasource : EntriesDataDelegateSource!
     
+    var afterId : String?
+    var beforeId : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        self.delegateDatasource.table = self.topListTable
+
+        ConnectionWrapper.getTopReddits(after: self.afterId, before: self.beforeId) { (success, resultEntries) in 
+            
+            if success {
+                self.delegateDatasource.getNewEntries(resultEntries: resultEntries)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

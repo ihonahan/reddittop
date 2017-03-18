@@ -8,7 +8,24 @@
 
 import UIKit
 
+protocol EntryTableViewCellDelegate {
+    func entryTableViewCellDidTappedThumb(sender: EntryTableViewCell, entry: Entry)
+}
+
 class EntryTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var fullContainer : UIView!
+    @IBOutlet weak var arrowsImageView : UIImageView!
+    @IBOutlet weak var upVotesLabel : UILabel!
+    @IBOutlet weak var thumbImageView : UIImageView!
+    @IBOutlet weak var thumbButton : UIButton!
+    @IBOutlet weak var titleLabel : UILabel!
+    @IBOutlet weak var authorLabel : UILabel!
+    @IBOutlet weak var dateLabel : UILabel!
+    @IBOutlet weak var commentsLabel : UILabel!
+    
+    weak var entry : Entry!
+    var delegate : EntryTableViewCellDelegate!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +38,9 @@ class EntryTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func tapUpThumb(sender: UIButton) {
+        if let del = self.delegate {
+            del.entryTableViewCellDidTappedThumb(sender: self, entry: self.entry!)
+        }
+    }
 }
