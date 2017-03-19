@@ -121,6 +121,27 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="116" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-jm-mpf">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <view key="tableFooterView" contentMode="scaleToFill" id="pvR-1X-Qgm">
+                                            <rect key="frame" x="0.0" y="144" width="375" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYN-Kj-Fn5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-BoldOblique" family="Helvetica" pointSize="18"/>
+                                                    <state key="normal" title="show more"/>
+                                                    <connections>
+                                                        <action selector="tapUpShowMoreWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3DB-h0-4a7"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.090196078430000007" green="0.039215686270000001" blue="0.019607843140000001" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="tYN-Kj-Fn5" firstAttribute="top" secondItem="pvR-1X-Qgm" secondAttribute="top" id="1Sx-hQ-WuG"/>
+                                                <constraint firstAttribute="bottom" secondItem="tYN-Kj-Fn5" secondAttribute="bottom" id="4xB-xM-gI2"/>
+                                                <constraint firstItem="tYN-Kj-Fn5" firstAttribute="leading" secondItem="pvR-1X-Qgm" secondAttribute="leading" id="R40-7W-Qmj"/>
+                                                <constraint firstAttribute="trailing" secondItem="tYN-Kj-Fn5" secondAttribute="trailing" id="SlN-dP-Ncw"/>
+                                            </constraints>
+                                        </view>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EntryCell" rowHeight="116" id="jRM-o8-TJk" customClass="EntryTableViewCell" customModule="redittop" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="116"/>
@@ -153,13 +174,13 @@
                                                                         <constraint firstAttribute="width" constant="57" id="yyw-sF-5tg"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                                                    <color key="textColor" red="0.19607843137254902" green="0.13725490196078433" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.98039215686274506" green="0.94117647058823528" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="754" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvM-eT-hgo">
                                                                     <rect key="frame" x="144" y="8" width="223" height="26"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
-                                                                    <color key="textColor" red="0.1048221983" green="0.045554956899999999" blue="0.031142241380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.98039215690000003" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="BD0-GU-01G">
@@ -168,7 +189,7 @@
                                                                         <constraint firstAttribute="height" constant="21" id="4XJ-xC-nP2"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="15"/>
-                                                                    <color key="textColor" red="0.1048221983" green="0.045554956899999999" blue="0.031142241380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.98039215690000003" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="Bre-p8-52g">
@@ -177,13 +198,13 @@
                                                                         <constraint firstAttribute="height" constant="21" id="81x-dD-ADR"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                                                    <color key="textColor" red="0.1048221983" green="0.045554956899999999" blue="0.031142241380000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.98039215690000003" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmw-JX-jyu">
                                                                     <rect key="frame" x="144" y="89" width="37" height="18"/>
                                                                     <fontDescription key="fontDescription" name="Helvetica-Oblique" family="Helvetica" pointSize="15"/>
-                                                                    <color key="textColor" red="0.1960784314" green="0.13725490200000001" blue="0.1215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <color key="textColor" red="0.98039215690000003" green="0.94117647059999998" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XT3-5E-S2U">
@@ -193,7 +214,7 @@
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
-                                                            <color key="backgroundColor" red="0.86875000000000002" green="0.89124461206896555" blue="1" alpha="0.65275930851063835" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.090196078431372548" green="0.039215686274509803" blue="0.019607843137254902" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="FvM-eT-hgo" firstAttribute="top" secondItem="0o7-0X-VD7" secondAttribute="top" constant="8" id="04v-hq-hNe"/>
                                                                 <constraint firstItem="UWe-MI-gxG" firstAttribute="centerX" secondItem="tva-X3-cLd" secondAttribute="centerX" id="27f-6W-HqX"/>
@@ -276,10 +297,12 @@
                     <connections>
                         <outlet property="backgroundImage" destination="tYQ-He-h9v" id="Lyj-zV-zxB"/>
                         <outlet property="delegateDatasource" destination="Ou6-CD-aiT" id="WjQ-S3-AOL"/>
+                        <outlet property="footerView" destination="pvR-1X-Qgm" id="Yvo-7J-oh6"/>
                         <outlet property="fullContainer" destination="AJK-Hm-TuE" id="eB1-2H-Ip6"/>
                         <outlet property="loadingContainer" destination="A0q-X1-8Ep" id="f4p-8F-ddT"/>
                         <outlet property="loadingFXView" destination="BhR-nR-voY" id="aLv-Zm-3Pe"/>
                         <outlet property="loadingView" destination="jbM-fe-h2h" id="Vru-4t-HM1"/>
+                        <outlet property="showMoreButton" destination="tYN-Kj-Fn5" id="4f2-Gd-O1d"/>
                         <outlet property="topListTable" destination="yg0-jm-mpf" id="wS9-W7-uu7"/>
                         <segue destination="Sgp-HB-tkZ" kind="presentation" identifier="modalFullImage" animates="NO" modalPresentationStyle="overFullScreen" id="QAe-Gt-Hpa"/>
                     </connections>
@@ -288,6 +311,19 @@
                 <customObject id="Ou6-CD-aiT" customClass="EntriesDataDelegateSource" customModule="redittop" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="scc-HR-Tgr">
+            <objects>
+                <viewController id="5co-9i-tEA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bNp-p8-7cN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NvI-a9-SyH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

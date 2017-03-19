@@ -17,22 +17,31 @@ class TopListViewController: UIViewController, EntriesDataDelegate {
     @IBOutlet weak var loadingFXView : UIVisualEffectView!
     @IBOutlet weak var loadingView : UIActivityIndicatorView!
     
+    @IBOutlet weak var footerView : UIView!
+    @IBOutlet weak var showMoreButton : UIButton!
+    
     @IBOutlet weak var delegateDatasource : EntriesDataDelegateSource!
     
     var afterId : String?
-    var beforeId : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.loadingContainer.isHidden = true
         self.fullContainer.sendSubview(toBack: self.loadingContainer)
+        
+        self.topListTable.rowHeight = UITableViewAutomaticDimension
+        self.topListTable.estimatedRowHeight = 116.0
 
         self.delegateDatasource.table = self.topListTable
         self.delegateDatasource.delegate = self
 
+        self.loadReddits()
+    }
+    
+    func loadReddits() {
         self.showLoading()
-        ConnectionWrapper.getTopReddits(after: self.afterId, before: self.beforeId) { (success, resultEntries) in 
+        ConnectionWrapper.getTopReddits(after: self.afterId) { (success, resultEntries) in
             
             if success {
                 self.delegateDatasource.getNewEntries(resultEntries: resultEntries)
@@ -65,6 +74,15 @@ class TopListViewController: UIViewController, EntriesDataDelegate {
             self.loadingView.stopAnimating()
             self.loadingContainer.isHidden = true
             self.fullContainer.sendSubview(toBack: self.loadingContainer)
+        }
+    }
+    
+    
+    //MARK: - Show more methods
+    @IBAction func tapUpShowMore(sender: UIButton) {
+        if let lastEntry = self.delegateDatasource.entries.last {
+            self.afterId = lastEntry.identifier
+            self.loadReddits()
         }
     }
     

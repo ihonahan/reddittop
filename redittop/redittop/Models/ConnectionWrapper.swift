@@ -15,15 +15,13 @@ class ConnectionWrapper: NSObject {
     static let baseUrl = "https://www.reddit.com/"
     static let topService = ".json"
 
-    static func getTopReddits(after: String?, before: String?, completionHandler: @escaping CompletionHandler) {
+    static func getTopReddits(after: String?, completionHandler: @escaping CompletionHandler) {
         let session = URLSession.shared
         var composedUrl = "\(ConnectionWrapper.baseUrl)\(ConnectionWrapper.topService)"
         
         if let afterValue = after {
             composedUrl += "?after=\(afterValue)"
-        } else if let beforeValue = before {
-            composedUrl += "?before=\(beforeValue)"
-        }
+        } 
         
         let url = URL(string: composedUrl)
         
